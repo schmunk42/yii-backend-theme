@@ -22,6 +22,7 @@
 
         <?php
         // CSS files
+        $cs = Yii::app()->getClientScript();
         $published = Yii::app()->assetManager->publish(Yii::app()->theme->basePath . '/css/backend.css');
         $cs->registerCssFile($published);
         ?>`

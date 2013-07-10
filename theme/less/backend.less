@@ -11,9 +11,9 @@
 /* import bootrap */
 @import "../../../../vendor/twitter/bootstrap/less/bootstrap.less";
 @import "../../../../vendor/twitter/bootstrap/less/responsive.less";
-/* use bootstrap with blueprint translation (for old extensions) */
+  /* use bootstrap with blueprint translation (for old extensions) */
 @import "../../../../vendor/phundament/lessii/translations/blueprint-bootstrap.less";
-/* override variables with local values */
+  /* override variables with local values */
 @import "variables.less";
 
 /* force scrollbars */
@@ -34,14 +34,15 @@ img {
   height: auto !important;
 }
 
-
 #rights.container {
   width: auto;
 }
 
-input, textarea, .uneditable-input {
-  width: auto;
-  max-width: 60px; /* TODO */
+table {
+  input, textarea, .uneditable-input {
+    width: auto;
+    max-width: 60px; /* TODO */
+  }
 }
 
 td.button-column {

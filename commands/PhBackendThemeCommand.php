@@ -39,7 +39,7 @@ EOS;
             echo "\nInvalid 'themePath', aborting.";
             return;
         }
-        echo "\nCopying p3bootstrap package to theme folders ...\n";
+        echo "\nDeploying phundament/backend-theme package contents to theme folder as '{$this->themeName}' ...\n";
         $backendViews = $this->buildFileList(
             $srcPath . 'theme',
             $themePath . DIRECTORY_SEPARATOR . $this->themeName

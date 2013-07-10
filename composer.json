@@ -1,0 +1,24 @@
+{
+    "name": "phundament/backend-theme",
+    "description": "Backend Bootstrap Theme for Phundament",
+    "keywords": ["yii", "admin", "backend", "bootstrap", "theme"],
+    "homepage": "https://github.com/schmunk42/yii-backend-theme",
+    "type": "yii-theme",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Tobias Munk",
+            "email": "schmunk@usrbin.de",
+            "homepage": "http://www.usrbin.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "yiisoft/yii" : "1.1.*",
+        "clevertech/yiibooster": "1.*"
+    },
+    "suggest": {
+        "crisu83/yii-less": "LESS compiler",
+        "twitter/bootstrap": "Source files for LESS customization"
+    }
+}

@@ -1,3 +1,4 @@
+<div id="backend-navbar">
 <?php
 Yii::import('p3pages.modules.*');
 
@@ -39,7 +40,6 @@ $this->widget(
                          'itemOptions' => array(
                              "id"      => "P3WidgetContainerShowControls",
                              'class'   => 'edit',
-                             'onclick' => "$('i',this).toggleClass('icon-eye-open icon-edit'); $(this).toggleClass('edit view');",
                          )
                      ),
                      /*
@@ -232,3 +232,4 @@ $this->widget(
     )
 );
 ?>
+</div>

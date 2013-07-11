@@ -8,6 +8,8 @@ if ($page !== null) {
     $translation = null;
 }
 
+#echo CHtml::image('https://github.com/phundament/app/wiki/images/logo_phundament3.png');
+
 $this->widget(
     'TbMenu',
     array(

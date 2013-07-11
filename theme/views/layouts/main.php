@@ -3,8 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-    <meta name="description" content="<?php echo (P3Page::getActivePage())?P3Page::getActivePage()->t('description'):'' ?>">
-    <meta name="keywords" content="<?php echo (P3Page::getActivePage())?P3Page::getActivePage()->t('keywords'):'' ?>">
+    <meta name="description"
+          content="<?php echo (P3Page::getActivePage()) ? P3Page::getActivePage()->t('description') : '' ?>">
+    <meta name="keywords"
+          content="<?php echo (P3Page::getActivePage()) ? P3Page::getActivePage()->t('keywords') : '' ?>">
     <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -18,29 +20,37 @@
     $cs->registerLinkTag('shortcut icon', NULL, '/favicon.ico', NULL, NULL);
 
     // CSS files
-    $css = Yii::app()->assetManager->publish(Yii::app()->theme->basePath . '/css', false, -1, true); // set last param to `true` for development
-    $cs->registerCssFile($css."/backend.css");
+    $css = Yii::app()->assetManager->publish(
+        Yii::app()->theme->basePath . '/css',
+        false,
+        -1,
+        true
+    ); // set last param to `true` for development
+    $cs->registerCssFile($css . "/backend.css");
     ?>
 </head>
 
-<body>
-
-<?php $this->renderFile(__DIR__.'/_navbar.php') ?>
+<body id="backend">
 
 <div class="container-fluid">
     <div class="subwrapper">
         <div class="row-fluid">
-            <div class="span2">
-                <?php $this->renderFile(__DIR__.'/_sidebar.php') ?>
+            <div class="span2 sidebar">
+                <div class="sidebar-wrapper">
+                <?php $this->renderFile(__DIR__ . '/_sidebar.php') ?>
+                </div>
             </div>
             <div class="span10">
                 <div class="row-fluid">
-                   <?php echo $content; ?>
+                    <?php echo $content; ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- /container -->
+
+<?php $this->renderFile(__DIR__ . '/_navbar.php') ?>
+
 </body>
 </html>

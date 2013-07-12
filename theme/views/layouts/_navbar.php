@@ -181,13 +181,11 @@ $this->widget(
                          'visible' => Yii::app()->user->checkAccess('Admin')
                      ),
                      array(
-                         'label'   => ucfirst(Yii::app()->user->name),
+                         #'label'   => ucfirst(Yii::app()->user->name),
                          'visible' => !Yii::app()->user->isGuest,
-                         'icon'    => Yii::app()->user->checkAccess('Superuser') ?
-                             'warning-sign white' :
-                             'user white',
+                         'icon'    => 'user white',
                          'items'   => array(
-                             array('label' => Yii::t('app', 'User')),
+                             /*
                              array(
                                  'label'   => Yii::t('app', 'Profile'),
                                  'icon'    => 'tasks ',
@@ -200,7 +198,16 @@ $this->widget(
                                  'url'     => array('/user'),
                                  'visible' => !Yii::app()->user->isGuest
                              ),
-                             '---',
+                             '---',*/
+                             array('label' => Yii::t('app', 'User')),
+                             array(
+                                 'label'   => Yii::t('app', 'Accounts'),
+                                 'visible' => !Yii::app()->user->isGuest,
+                                 'icon'    => 'user',
+                                 'url'     => array('/user/admin/admin'),
+                                 'visible' => !Yii::app()->user->isGuest
+                             ),
+                             array('label' => ucfirst(Yii::app()->user->name)),
                              array(
                                  'label'   => Yii::t('app', 'Logout'),
                                  'icon'    => 'lock ',
@@ -220,7 +227,7 @@ $this->widget(
                          'icon'  => 'globe white',
                          'url'   => '#',
                          'items' => array(
-                             array('label' => Yii::t('app', 'Choose Language')),
+                             array('label' => Yii::t('app', 'Languages')),
                              array(
                                  'label' => 'English',
                                  'url'   => array_merge(array(''), $_GET, array('lang' => 'en'))

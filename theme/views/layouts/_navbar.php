@@ -103,6 +103,16 @@ $this->widget(
                                  'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page
                              ),
                              array(
+                                 'label'   => Yii::t('app', 'Position and Settings'),
+                                 'icon'    => 'info-sign',
+                                 'url'     => array(
+                                     '/p3pages/p3PageMeta/update',
+                                     'id'        => ($page) ? $page->id : null,
+                                     'returnUrl' => getenv('REQUEST_URI')
+                                 ),
+                                 'visible' => Yii::app()->user->checkAccess('P3pages.P3PageMeta.*') && $page
+                             ),
+                             array(
                                  'label'   => Yii::t('app', 'Append Child Page'),
                                  'icon'    => 'plus ',
                                  'url'     => array(

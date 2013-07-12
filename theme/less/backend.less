@@ -21,12 +21,27 @@ html {
   overflow-y: scroll;
 }
 
+.sidebar-wrapper UL.nav {
+  position: fixed;
+}
+
 .subwrapper {
   margin-top: 20px;
 }
 
 footer {
   margin-bottom: 30px;
+}
+
+/* workaround for 'status-bar' on chrome and firefox */
+#backend-navbar {
+  opacity: 0.85;
+  .navbar-fixed-bottom {
+    z-index: 1150; // higher than widget container
+  }
+  .navbar-inner {
+    padding-bottom: 20px;
+  }
 }
 
 /* fix responsive images */
@@ -36,6 +51,11 @@ img {
 
 #rights.container {
   width: auto;
+  .flashes {
+    top: 0px;
+    left:0px;
+    width: 100%;
+  }
 }
 
 table {

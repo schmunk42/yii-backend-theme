@@ -47,8 +47,9 @@
             </div>
         </div>
     </div>
-</div>
-<!-- /container -->
+</div><!-- /container -->
+
+<footer></footer>
 
 <?php $this->renderFile(__DIR__ . '/_navbar.php') ?>
 

@@ -35,14 +35,14 @@
 <div class="container-fluid">
     <div class="subwrapper">
         <div class="row-fluid">
-            <div class="span2 sidebar">
-                <div class="sidebar-wrapper">
-                <?php $this->renderFile(__DIR__ . '/_sidebar.php') ?>
-                </div>
-            </div>
-            <div class="span10">
+            <div class="span10 content-container">
                 <div class="row-fluid">
                     <?php echo $content; ?>
+                </div>
+            </div>
+            <div class="span2 sidebar-container">
+                <div class="sidebar-wrapper">
+                    <?php $this->renderFile(__DIR__ . '/_sidebar.php') ?>
                 </div>
             </div>
         </div>

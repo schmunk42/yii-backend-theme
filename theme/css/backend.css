@@ -8249,12 +8249,27 @@ html {
 footer {
   margin-bottom: 30px;
 }
+/* workaround for 'status-bar' on chrome and firefox */
+#backend-navbar {
+  opacity: 0.85;
+}
+#backend-navbar .navbar-fixed-bottom {
+  z-index: 1150;
+}
+#backend-navbar .navbar-inner {
+  padding-bottom: 20px;
+}
 /* fix responsive images */
 img {
   height: auto !important;
 }
 #rights.container {
   width: auto;
+}
+#rights.container .flashes {
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
 table input,
 table textarea,
@@ -8274,5 +8289,27 @@ td.button-column {
 @media (max-width: 767px) {
   .hint {
     margin-bottom: 0.5em;
+  }
+}
+@media (min-width: 768px) {
+  #backend .navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    margin-bottom: 0;
+  }
+  #backend DIV.sidebar-container {
+    float: left;
+    margin-left: 0%;
+    width: 200px;
+    position: absolute;
+  }
+  #backend DIV.content-container {
+    float: right;
+    margin-left: 220px;
+  }
+  #backend .sidebar-wrapper UL.nav {
+    position: fixed;
   }
 }

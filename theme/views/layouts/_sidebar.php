@@ -45,14 +45,14 @@ $this->widget(
                  'visible' => Yii::app()->user->checkAccess('P3media.Import.*')
              ),
              array(
-                 'label'   => Yii::t('app', 'Browse'),
+                 'label'   => Yii::t('app', 'Gallery'),
                  'icon'    => 'th',
                  'url'     => array('/p3media/default/browser'),
                  'visible' => Yii::app()->user->checkAccess('P3media.Default.*')
              ),
              array('label' => Yii::t('app', 'Widgets')),
              array(
-                 'label'   => Yii::t('app', 'Manage'),
+                 'label'   => Yii::t('app', 'Regsitry'),
                  'icon'    => 'list-alt',
                  'url'     => array('/p3widgets/default/index'),
                  'visible' => Yii::app()->user->checkAccess('P3widgets.Default.*')
@@ -60,7 +60,7 @@ $this->widget(
              '---',
              array('label' => Yii::t('app', 'Users')),
              array(
-                 'label'   => Yii::t('app', 'Manage'),
+                 'label'   => Yii::t('app', 'Accounts'),
                  'icon'    => 'user',
                  'url'     => array('/user/admin/admin'),
                  'visible' => Yii::app()->user->checkAccess('Admin')

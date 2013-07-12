@@ -35,7 +35,7 @@ $this->widget(
                  'items'       => array(
                      array(
                          'icon'        => 'eye-open white',
-                         'url'         => '#',
+                         'url'         => '',
                          'visible'     => Yii::app()->user->checkAccess('Editor'),
                          'itemOptions' => array(
                              "id"      => "P3WidgetContainerShowControls",

@@ -17,17 +17,28 @@
 @import "variables.less";
 
 /* force scrollbars */
-html {
+/*html {
   overflow-y: scroll;
-}
+}*/
 
 .subwrapper {
   margin-top: 20px;
 }
 
 footer {
-  margin-bottom: 30px;
+  margin-bottom: 120px;
 }
+
+.row-fluid .row {
+  margin-left: 0;
+}
+
+/* fix responsive images */
+img {
+  height: auto !important;
+}
+
+
 
 /* workaround for 'status-bar' on chrome and firefox */
 #backend-navbar {
@@ -40,23 +51,30 @@ footer {
   }
 }
 
-/* fix responsive images */
-img {
-  height: auto !important;
-}
-
 #rights.container {
   width: auto;
+  * {
+    font-family: @baseFontFamily !important; // TODO
+  }
   .flashes {
-    top: 0px;
+    top: 80px;
     left: 0px;
     width: 100%;
   }
+  #menu UL.actions {
+    LI A {
+      .btn;
+    }
+  }
 }
 
-input.je-key-input,
-input.je-val-input {
+input.je-key-input {
+  width: 20%;
   text-align: left;
+}
+input.je-val-input {
+    width: 50%;
+    text-align: left;
 }
 
 input, textarea, .uneditable-input {
@@ -68,12 +86,13 @@ input, textarea, .uneditable-input {
       width: auto;
       max-width: 60px; /* TODO */
     }
+    td.button-column {
+      white-space: nowrap;
+    }
   }
 }
 
-td.button-column {
-  white-space: nowrap;
-}
+
 
 .hint {
   color: @grayLight;
@@ -86,6 +105,8 @@ td.button-column {
   }
 
 }
+
+
 
 @media (min-width: 768px) {
   #backend {

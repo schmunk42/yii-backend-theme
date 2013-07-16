@@ -24,19 +24,13 @@ footer {
   margin-bottom: 120px;
 }
 
-// fix rows
-
-.row-fluid .row {
-  margin-left: 0;
-}
-
 // fix responsive images
 
 img {
   height: auto !important;
 }
 
-// Workaround for 'status-bar' on chrome and firefox
+// workaround for 'status-bar' on chrome and firefox
 
 #backend-navbar {
   opacity: 0.85;
@@ -48,7 +42,36 @@ img {
   }
 }
 
-// Form
+// fluid thumb grid
+
+.row-fluid {
+  // fix rows in fluid rows
+  .row {
+    margin-left: 0;
+  }
+  ul.thumbnails {
+    li.span12 + li {
+      margin-left: 0px;
+    }
+    li.span6:nth-child(2n + 3) {
+      margin-left: 0px;
+    }
+    li.span4:nth-child(3n + 4) {
+      margin-left: 0px;
+    }
+    li.span3:nth-child(4n + 5) {
+      margin-left: 0px;
+    }
+    li.span2:nth-child(6n + 7) {
+      margin-left: 0px;
+    }
+    li.span1:nth-child(12n + 13) {
+      margin-left: 0px;
+    }
+  }
+}
+
+// form
 
 input, textarea, .uneditable-input {
   width: auto;
@@ -73,7 +96,7 @@ TEXTAREA.error, SELECT.error, INPUT.error, .select2-container.error A {
   }
 }
 
-// Select2
+// select2
 
 .select2-container {
   min-width: 50%;
@@ -81,7 +104,7 @@ TEXTAREA.error, SELECT.error, INPUT.error, .select2-container.error A {
   margin-bottom: 9px;
 }
 
-// Grid
+// grid
 
 .grid-view {
   table {
@@ -118,10 +141,52 @@ input.je-val-input {
   .hint {
     margin-bottom: 0.5em;
   }
-
 }
 
-// Rights module
+// p3admin module
+
+#p3admin-settings-view {
+  ul.thumbnails li {
+    height: 100px;
+  }
+}
+
+// p3media module
+
+#p3media-default-browser {
+  ul.thumbnails {
+    li {
+      h5 {
+        text-overflow: ellipsis;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.sorter {
+  float: right;
+  UL {
+    float: none;
+    display: inline;
+    margin-left: 0px;
+  }
+  UL LI {
+    float: none;
+    display: inline;
+    margin-left: 20px;
+  }
+}
+
+.fileupload-content .ui-progressbar {
+  min-width: 40px;
+  width: auto;
+}
+
+
+// rights module
 
 #rights.container {
   width: auto;
@@ -140,7 +205,7 @@ input.je-val-input {
   }
 }
 
-// Responsive rules
+// responsive rules
 
 @media (min-width: 768px) {
   #backend {

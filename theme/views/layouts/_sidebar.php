@@ -46,8 +46,14 @@ $this->widget(
              ),
              array(
                  'label'   => Yii::t('app', 'Upload'),
-                 'icon'    => 'circle-arrow-up',
+                 'icon'    => 'upload',
                  'url'     => array('/p3media/import/upload'),
+                 'visible' => Yii::app()->user->checkAccess('P3media.Import.*')
+             ),
+             array(
+                 'label'   => Yii::t('app', 'Local File Scan'),
+                 'icon'    => 'circle-arrow-up',
+                 'url'     => array('/p3media/import/scan'),
                  'visible' => Yii::app()->user->checkAccess('P3media.Import.*')
              ),
              array('label' => Yii::t('app', 'Widgets')),

@@ -177,7 +177,7 @@ $this->widget(
                      array(
                          #'label'   => Yii::t('app', 'Settings'),
                          'icon'    => 'cog white',
-                         'url'     => array('/p3admin/default/settings'),
+                         'url'     => array('/p3admin/default/overview'),
                          'visible' => Yii::app()->user->checkAccess('Admin')
                      ),
                      array(
@@ -186,12 +186,6 @@ $this->widget(
                          'icon'    => 'user white',
                          'items'   => array(
                              /*
-                             array(
-                                 'label'   => Yii::t('app', 'Profile'),
-                                 'icon'    => 'tasks ',
-                                 'url'     => array('/user/profile'),
-                                 'visible' => !Yii::app()->user->isGuest
-                             ),
                              array(
                                  'label'   => Yii::t('app', 'List'),
                                  'icon'    => 'list ',
@@ -208,6 +202,12 @@ $this->widget(
                                  'visible' => !Yii::app()->user->isGuest
                              ),
                              array('label' => ucfirst(Yii::app()->user->name)),
+                             array(
+                                 'label'   => Yii::t('app', 'Profile'),
+                                 'icon'    => 'tasks ',
+                                 'url'     => array('/user/profile'),
+                                 'visible' => !Yii::app()->user->isGuest
+                             ),
                              array(
                                  'label'   => Yii::t('app', 'Logout'),
                                  'icon'    => 'lock ',

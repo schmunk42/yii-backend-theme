@@ -23,9 +23,9 @@ $this->widget(
                  'visible' => Yii::app()->user->checkAccess('Editor')
              ),
              array(
-                 'label'   => Yii::t('app', 'Settings'),
+                 'label'   => Yii::t('app', 'Overview'),
                  'icon'    => 'cog',
-                 'url'     => array('/p3admin/default/settings'),
+                 'url'     => array('/p3admin/default/overview'),
                  'visible' => Yii::app()->user->checkAccess('Admin')
              ),
              '---',
@@ -39,20 +39,20 @@ $this->widget(
 
              array('label' => Yii::t('app', 'Media')),
              array(
+                 'label'   => Yii::t('app', 'Browser'),
+                 'icon'    => 'th',
+                 'url'     => array('/p3media/default/browser'),
+                 'visible' => Yii::app()->user->checkAccess('P3media.Default.*')
+             ),
+             array(
                  'label'   => Yii::t('app', 'Upload'),
                  'icon'    => 'circle-arrow-up',
                  'url'     => array('/p3media/import/upload'),
                  'visible' => Yii::app()->user->checkAccess('P3media.Import.*')
              ),
-             array(
-                 'label'   => Yii::t('app', 'Gallery'),
-                 'icon'    => 'th',
-                 'url'     => array('/p3media/default/browser'),
-                 'visible' => Yii::app()->user->checkAccess('P3media.Default.*')
-             ),
              array('label' => Yii::t('app', 'Widgets')),
              array(
-                 'label'   => Yii::t('app', 'Regsitry'),
+                 'label'   => Yii::t('app', 'Registry'),
                  'icon'    => 'list-alt',
                  'url'     => array('/p3widgets/default/index'),
                  'visible' => Yii::app()->user->checkAccess('P3widgets.Default.*')

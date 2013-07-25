@@ -27,7 +27,7 @@ EOS;
     }
 
     /**
-     * Syncs from 'server1' to 'server2' the 'alias'
+     * Copies theme files into `themePath`.`themeName`
      *
      * @param type $args
      */

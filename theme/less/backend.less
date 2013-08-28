@@ -108,9 +108,12 @@ TEXTAREA.error, SELECT.error, INPUT.error, .select2-container.error A {
 
 .grid-view {
   table {
-    input, textarea, .uneditable-input {
-      width: auto;
-      max-width: 60px; /* TODO */
+    select, input, textarea, .uneditable-input {
+      width: 100%;
+      max-width: 90%;
+    }
+    td:first-child {
+      min-width: 200px;
     }
     td.button-column {
       white-space: nowrap;
@@ -202,6 +205,11 @@ input.je-val-input {
     LI A {
       .btn;
     }
+  }
+  A.revoke-link {
+    .label;
+    background-color: @successText;
+    &[href]     { background-color: darken(@successText, 10%); }
   }
 }
 

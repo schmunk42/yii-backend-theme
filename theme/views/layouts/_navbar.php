@@ -175,13 +175,7 @@ $this->widget(
                  'htmlOptions' => array('class' => 'pull-right'),
                  'items'       => array(
                      array(
-                         #'label'   => Yii::t('app', 'Settings'),
-                         'icon'    => 'cog white',
-                         'url'     => array('/p3admin/default/overview'),
-                         'visible' => Yii::app()->user->checkAccess('Admin')
-                     ),
-                     array(
-                         #'label'   => ucfirst(Yii::app()->user->name),
+                         'label'   => ucfirst(Yii::app()->user->name),
                          'visible' => !Yii::app()->user->isGuest,
                          'icon'    => 'user white',
                          'items'   => array(
@@ -237,6 +231,12 @@ $this->widget(
                                  'url'   => array_merge(array(''), $_GET, array('lang' => 'de'))
                              ),
                          ),
+                     ),
+                     array(
+                         #'label'   => Yii::t('app', 'Settings'),
+                         'icon'    => 'cog white',
+                         'url'     => array('/p3admin/default/overview'),
+                         'visible' => Yii::app()->user->checkAccess('Admin')
                      ),
                      array(
                          'label' => 'Phundament',

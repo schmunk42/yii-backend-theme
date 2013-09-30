@@ -44,16 +44,21 @@ $this->widget(
                          'visible' => !Yii::app()->user->isGuest,
                          'icon'    => 'user white',
                          'items'   => array(
-                             array('label' => ucfirst(Yii::app()->user->name)),
                              array(
                                  'label'   => Yii::t('app', 'Profile'),
-                                 'icon'    => 'tasks ',
+                                 'icon'    => 'tasks',
                                  'url'     => array('/user/profile'),
                                  'visible' => !Yii::app()->user->isGuest
                              ),
                              array(
+                                 'label'   => Yii::t('app', 'User List'),
+                                 'icon'    => 'group',
+                                 'url'     => array('/user/default/index'),
+                                 'visible' => !Yii::app()->user->isGuest
+                             ),
+                             array(
                                  'label'   => Yii::t('app', 'Logout'),
-                                 'icon'    => 'lock ',
+                                 'icon'    => 'lock',
                                  'url'     => array('/site/logout'),
                                  'visible' => !Yii::app()->user->isGuest
                              ),
@@ -65,13 +70,6 @@ $this->widget(
                          'visible' => Yii::app()->user->isGuest,
                          'icon'    => 'lock white'
                      ),
-
-                 )
-             ),
-             array(
-                 'class'       => 'TbMenu',
-                 'htmlOptions' => array('class' => 'pull-right'),
-                 'items'       => array(
                      array(
                          'icon'        => 'eye-open white',
                          'url'         => '',
@@ -81,6 +79,13 @@ $this->widget(
                              'class' => 'edit',
                          )
                      ),
+
+                 )
+             ),
+             array(
+                 'class'       => 'TbMenu',
+                 'htmlOptions' => array('class' => 'pull-right'),
+                 'items'       => array(
                      array(
                          'label' => 'Phundament',
                          'url'   => array('/p3admin/default/index'),
@@ -89,10 +94,9 @@ $this->widget(
                              array('label' => Yii::t('app', 'User')),
                              array(
                                  'label'   => Yii::t('app', 'Accounts'),
-                                 'visible' => !Yii::app()->user->isGuest,
                                  'icon'    => 'user',
                                  'url'     => array('/user/admin/admin'),
-                                 'visible' => !Yii::app()->user->isGuest
+                                 'visible' => Yii::app()->user->checkAccess('Admin')
                              ),
                              '---',
                              array(

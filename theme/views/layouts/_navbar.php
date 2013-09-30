@@ -71,7 +71,7 @@ $this->widget(
                          'icon'    => 'lock white'
                      ),
                      array(
-                         'icon'        => 'eye-open white',
+                         'icon'        => 'edit white',
                          'url'         => '',
                          'visible'     => Yii::app()->user->checkAccess('Editor'),
                          'itemOptions' => array(

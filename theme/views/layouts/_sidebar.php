@@ -71,13 +71,13 @@
                  array('label' => Yii::t('app', 'Translations')),
                  array(
                      'label'   => Yii::t('app', 'Dictionaries'),
-                     'icon'    => 'list-alt',
+                     'icon'    => 'globe',
                      'url'     => array('/translate/edit/admin'),
                      'visible' => Yii::app()->user->checkAccess('Translate.*')
                  ),
                  array(
                      'label'   => Yii::t('app', 'Translate Missing'),
-                     'icon'    => 'list-alt',
+                     'icon'    => 'flag',
                      'url'     => array('/translate/edit/missing'),
                      'visible' => Yii::app()->user->checkAccess('Translate.*')
                  ),

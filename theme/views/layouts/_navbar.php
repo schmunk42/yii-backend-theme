@@ -5,8 +5,10 @@ Yii::import('p3pages.modules.*');
 $rootNode = P3Page::model()->findByAttributes(array('name_id' => 'Navbar'));
 $page = P3Page::getActivePage();
 if ($page !== null) {
+    $hasTranslation = !$page->getTranslationModel()->isNewRecord;
     $translation = $page->getTranslationModel();
 } else {
+    $hasTranslation = false;
     $translation = null;
 }
 
@@ -125,21 +127,6 @@ $this->widget(
                                  'visible' => Yii::app()->user->checkAccess('P3pages.Default.*')
                              ),
                              array(
-                                 'label'   => Yii::t('app', 'Create Translation'),
-                                 'icon'    => 'pencil ',
-                                 'url'     => array(
-                                     '/p3pages/p3PageTranslation/create',
-                                     'returnUrl'         => getenv('REQUEST_URI'),
-                                     'P3PageTranslation' => array(
-                                         'p3_page_id' => ($page) ? $page->id : null,
-                                         'language'   => Yii::app()->language
-                                     )
-                                 ),
-                                 'visible' => Yii::app()->user->checkAccess(
-                                     'P3pages.P3PageTranslation.*'
-                                 ) && $page && !$translation
-                             ),
-                             array(
                                  'label'   => Yii::t('app', 'Append Sibling'),
                                  'icon'    => 'plus-sign ',
                                  'url'     => array(
@@ -169,12 +156,27 @@ $this->widget(
                                  'icon'    => 'flag ',
                                  'url'     => array(
                                      '/p3pages/p3PageTranslation/update',
+                                     'id'        => ($hasTranslation) ? $translation->id : null,
                                      'returnUrl' => getenv('REQUEST_URI'),
-                                     'id'        => ($translation) ? $translation->id : null
                                  ),
                                  'visible' => Yii::app()->user->checkAccess(
                                      'P3pages.P3PageTranslation.*'
-                                 ) && $page && $translation
+                                 ) && $page && $hasTranslation
+                             ),
+                             array(
+                                 'label'   => Yii::t('app', 'Create Translation'),
+                                 'icon'    => 'pencil ',
+                                 'url'     => array(
+                                     '/p3pages/p3PageTranslation/create',
+                                     'returnUrl'         => getenv('REQUEST_URI'),
+                                     'P3PageTranslation' => array(
+                                         'p3_page_id' => ($page) ? $page->id : null,
+                                         'language'   => Yii::app()->language
+                                     )
+                                 ),
+                                 'visible' => Yii::app()->user->checkAccess(
+                                     'P3pages.P3PageTranslation.*'
+                                 ) && $page && !$hasTranslation
                              ),
                              array(
                                  'label'   => Yii::t('app', 'Update'),

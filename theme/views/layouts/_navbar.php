@@ -119,7 +119,13 @@ $this->widget(
                                  'label' => Yii::t('app', 'Pages'),
                              ),
                              array(
-                                 'label'   => Yii::t('app', 'Translation'),
+                                 'label'   => Yii::t('app', 'Sitemap'),
+                                 'icon'    => 'list ',
+                                 'url'     => array('/p3pages'),
+                                 'visible' => Yii::app()->user->checkAccess('P3pages.Default.*')
+                             ),
+                             array(
+                                 'label'   => Yii::t('app', 'Create Translation'),
                                  'icon'    => 'pencil ',
                                  'url'     => array(
                                      '/p3pages/p3PageTranslation/create',
@@ -134,19 +140,7 @@ $this->widget(
                                  ) && $page && !$translation
                              ),
                              array(
-                                 'label'   => Yii::t('app', 'Append Child Page'),
-                                 'icon'    => 'plus ',
-                                 'url'     => array(
-                                     '/p3pages/p3Page/create',
-                                     'returnUrl'  => getenv('REQUEST_URI'),
-                                     'P3Page' => array(
-                                         'tree_parent_id' => ($page) ? $page->id : null,
-                                     )
-                                 ),
-                                 'visible' => Yii::app()->user->checkAccess('P3pages.P3Page.*') && $page
-                             ),
-                             array(
-                                 'label'   => Yii::t('app', 'Append Sibling Page'),
+                                 'label'   => Yii::t('app', 'Append Sibling'),
                                  'icon'    => 'plus-sign ',
                                  'url'     => array(
                                      '/p3pages/p3Page/create',
@@ -159,13 +153,19 @@ $this->widget(
                                  'visible' => Yii::app()->user->checkAccess('P3pages.P3Page.*') && $page
                              ),
                              array(
-                                 'label'   => Yii::t('app', 'Sitemap'),
-                                 'icon'    => 'list ',
-                                 'url'     => array('/p3pages'),
-                                 'visible' => Yii::app()->user->checkAccess('P3pages.Default.*')
+                                 'label'   => Yii::t('app', 'Append Child'),
+                                 'icon'    => 'plus ',
+                                 'url'     => array(
+                                     '/p3pages/p3Page/create',
+                                     'returnUrl'  => getenv('REQUEST_URI'),
+                                     'P3Page' => array(
+                                         'tree_parent_id' => ($page) ? $page->id : null,
+                                     )
+                                 ),
+                                 'visible' => Yii::app()->user->checkAccess('P3pages.P3Page.*') && $page
                              ),
                              array(
-                                 'label'   => Yii::t('app', 'Translation'),
+                                 'label'   => Yii::t('app', 'Update Translation'),
                                  'icon'    => 'flag ',
                                  'url'     => array(
                                      '/p3pages/p3PageTranslation/update',
@@ -177,17 +177,20 @@ $this->widget(
                                  ) && $page && $translation
                              ),
                              array(
-                                 'label'   => Yii::t('app', 'Template'),
+                                 'label'   => Yii::t('app', 'Update'),
                                  'icon'    => 'wrench ',
                                  'url'     => array(
                                      '/p3pages/p3Page/update',
                                      'id'        => ($page) ? $page->id : null,
                                      'returnUrl' => getenv('REQUEST_URI')
                                  ),
-                                 'visible' => Yii::app()->user->checkAccess('P3pages.P3PageTranslation.*') && $page
+                                 'visible' => Yii::app()->user->checkAccess('P3pages.P3Page.*') && $page
                              ),
 
                              '---',
+                             array(
+                                 'label' => Yii::t('app', 'Application'),
+                             ),
                              array(
                                  'label'   => Yii::t('app', 'Overview'),
                                  'icon'    => 'cog',
@@ -196,7 +199,7 @@ $this->widget(
                              ),
                              array(
                                  'label'   => Yii::t('app', 'Dashboard'),
-                                 'icon'    => 'cog',
+                                 'icon'    => 'list-alt',
                                  'url'     => array('/p3admin/default/index'),
                                  'visible' => Yii::app()->user->checkAccess('Editor'),
 

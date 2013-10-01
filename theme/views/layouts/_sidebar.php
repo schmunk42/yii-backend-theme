@@ -68,6 +68,19 @@
                      'url'     => array('/p3widgets/default/index'),
                      'visible' => Yii::app()->user->checkAccess('P3widgets.Default.*')
                  ),
+                 array('label' => Yii::t('app', 'Translations')),
+                 array(
+                     'label'   => Yii::t('app', 'Dictionaries'),
+                     'icon'    => 'list-alt',
+                     'url'     => array('/translate/edit/admin'),
+                     'visible' => Yii::app()->user->checkAccess('Translate.*')
+                 ),
+                 array(
+                     'label'   => Yii::t('app', 'Translate Missing'),
+                     'icon'    => 'list-alt',
+                     'url'     => array('/translate/edit/missing'),
+                     'visible' => Yii::app()->user->checkAccess('Translate.*')
+                 ),
                  '---',
                  array('label' => Yii::t('app', 'Users')),
                  array(

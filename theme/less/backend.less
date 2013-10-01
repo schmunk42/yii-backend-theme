@@ -25,13 +25,11 @@ footer {
 }
 
 // fix responsive images
-
 img {
   height: auto !important;
 }
 
 // workaround for 'status-bar' on chrome and firefox
-
 #backend-navbar {
   opacity: 0.85;
   .navbar-fixed-bottom {
@@ -42,8 +40,14 @@ img {
   }
 }
 
-// fluid thumb grid
+// fix for fontawesome from yiibooster
+.btn [class^="icon-"], .nav [class^="icon-"], .btn [class*=" icon-"], .nav [class*=" icon-"] {
+  display: inline-block;
+  line-height: 1em;
+}
 
+
+// fluid thumb grid
 .row-fluid {
   // fix rows in fluid rows
   .row {

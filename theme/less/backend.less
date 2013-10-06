@@ -40,10 +40,9 @@ img {
   }
 }
 
-// fix for fontawesome from yiibooster
-.btn [class^="icon-"], .nav [class^="icon-"], .btn [class*=" icon-"], .nav [class*=" icon-"] {
-  display: inline-block;
-  line-height: 1em;
+// we're removing the icon backgrounds, since we're using yiibooster.registerFontawesomeCss in main config
+[class^="icon-"], [class*=" icon-"] {
+  background-image: none;
 }
 
 

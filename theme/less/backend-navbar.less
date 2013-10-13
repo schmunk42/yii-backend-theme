@@ -9,8 +9,11 @@
  */
 
 #backend {
-  /* import bootrap */
+  // fix for backend-navbar disappearing under container and widget overlays
+  position: absolute;
+  z-index: 1500;
 
+  /* import bootrap */
 @import "../../../../vendor/twitter/bootstrap/less/variables.less";
 @import "variables.less";
 //@import "../../../../vendor/twitter/bootstrap/less/dropdowns.less";

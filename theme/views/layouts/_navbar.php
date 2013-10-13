@@ -42,6 +42,22 @@ $this->widget(
                          'items' => Controller::getLanguageMenuItems()
                      ),
                      array(
+                         'icon'        => 'edit white',
+                         'url'         => '',
+                         'visible'     => Yii::app()->user->checkAccess('Editor'),
+                         'itemOptions' => array(
+                             "id"    => "P3WidgetContainerShowControls",
+                             'class' => 'edit',
+                         )
+                     ),
+
+                 )
+             ),
+             array(
+                 'class'       => 'TbMenu',
+                 'htmlOptions' => array('class' => 'pull-right'),
+                 'items'       => array(
+                     array(
                          'label'   => ucfirst(Yii::app()->user->name),
                          'visible' => !Yii::app()->user->isGuest,
                          'icon'    => 'user white',
@@ -66,28 +82,6 @@ $this->widget(
                              ),
                          )
                      ),
-                     array(
-                         'label'   => Yii::t('app', 'Login'),
-                         'url'     => Yii::app()->user->loginUrl,
-                         'visible' => Yii::app()->user->isGuest,
-                         'icon'    => 'lock white'
-                     ),
-                     array(
-                         'icon'        => 'edit white',
-                         'url'         => '',
-                         'visible'     => Yii::app()->user->checkAccess('Editor'),
-                         'itemOptions' => array(
-                             "id"    => "P3WidgetContainerShowControls",
-                             'class' => 'edit',
-                         )
-                     ),
-
-                 )
-             ),
-             array(
-                 'class'       => 'TbMenu',
-                 'htmlOptions' => array('class' => 'pull-right'),
-                 'items'       => array(
                      array(
                          'label' => 'Phundament',
                          'url'   => array('/p3admin/default/index'),

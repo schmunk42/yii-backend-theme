@@ -43,11 +43,12 @@ $this->widget(
                      ),
                      array(
                          'icon'        => 'edit white',
-                         'url'         => '',
+                         'url'         => '#',
                          'visible'     => Yii::app()->user->checkAccess('Editor'),
                          'itemOptions' => array(
                              "id"    => "P3WidgetContainerShowControls",
                              'class' => 'edit',
+                             'onclick' => 'return false'
                          )
                      ),
 

@@ -48,8 +48,10 @@ $this->widget(
                          'itemOptions' => array(
                              "id"    => "P3WidgetContainerShowControls",
                              'class' => 'edit',
-                             'onclick' => 'return false'
-                         )
+                         ),
+                         'linkOptions' => array(
+                            'onclick'  => 'return false',
+                         ),
                      ),
 
                  )

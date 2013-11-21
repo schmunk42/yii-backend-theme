@@ -86,9 +86,9 @@ $this->widget(
                          )
                      ),
                      array(
-                         'label' => 'Phundament',
+                         'label' => 'Backend',
                          'url'   => array('/p3admin/default/index'),
-                         'icon'  => 'heart white',
+                         'icon'  => 'cog white',
                          'items' => array(
                              array('label' => Yii::t('app', 'User')),
                              array(

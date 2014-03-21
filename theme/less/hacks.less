@@ -1,0 +1,111 @@
+/* workaround for 'status-bar' on chrome and firefox */
+#backend-navbar {
+  opacity: 0.85;
+  .navbar-fixed-bottom {
+    z-index: 1150; // higher than widget container
+  }
+  .navbar-inner {
+    padding-bottom: 20px;
+  }
+}
+
+#rights.container {
+  width: auto;
+  .flashes {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+}
+
+#p3admin-settings-view {
+  ul.thumbnails li {
+    height: 100px;
+  }
+}
+
+// fluid thumb grid
+.row-fluid {
+  .row {
+    margin-left: 0;
+  }
+  ul.thumbnails {
+    li.span12 + li { margin-left : 0px; }
+    li.span6:nth-child(2n + 3) { margin-left : 0px; }
+    li.span4:nth-child(3n + 4) { margin-left : 0px; }
+    li.span3:nth-child(4n + 5) { margin-left : 0px; }
+    li.span2:nth-child(6n + 7) { margin-left : 0px; }
+    li.span1:nth-child(12n + 13) { margin-left : 0px; }
+  }
+}
+
+// JSON editor
+
+input.je-key-input,
+input.je-val-input {
+  text-align: left;
+}
+
+// grid search
+
+input, textarea, .uneditable-input {
+  width: auto;
+}
+.grid-view {
+  table {
+    input, textarea, .uneditable-input {
+      width: auto;
+      max-width: 60px; /* TODO */
+    }
+  }
+}
+
+td.button-column {
+  white-space: nowrap;
+}
+
+// help texts
+
+.hint {
+  color: @grayLight;
+  font-style: italic;
+}
+
+
+// RESPONSIVE
+
+@media (max-width: 767px) {
+  .hint {
+    margin-bottom: 0.5em;
+  }
+
+}
+
+@media (min-width: 768px) {
+  #backend {
+    .navbar-fixed-bottom {
+      position: fixed;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+      margin-bottom: 0;
+    }
+
+    DIV.sidebar-container {
+      .pull-left;
+      margin-left: 0%;
+      width: 200px;
+      position: absolute;
+    }
+    DIV.content-container {
+      .pull-right;
+      margin-left: 220px;
+      //width: 100%;
+    }
+    .sidebar-wrapper UL.nav {
+      position: fixed;
+    }
+  }
+}
+
+

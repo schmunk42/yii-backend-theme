@@ -59,7 +59,7 @@
                      'label'   => Yii::t('app', 'Local File Scan'),
                      'icon'    => 'circle-arrow-up',
                      'url'     => array('/p3media/import/scan'),
-                     'visible' => Yii::app()->user->checkAccess('P3media.Import.*')
+                     'visible' => Yii::app()->user->checkAccess('P3media.Import.Scan')
                  ),
                  array('label' => Yii::t('app', 'Widgets')),
                  array(
